@@ -8,3 +8,5 @@ cilium:
       enabled: true
     ui:
       enabled: true
+  operator:
+    replicas: 1 # TODO remove in real env
