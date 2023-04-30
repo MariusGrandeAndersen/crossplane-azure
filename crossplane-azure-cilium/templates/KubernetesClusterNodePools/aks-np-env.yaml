@@ -3,7 +3,7 @@ kind: KubernetesClusterNodePool
 metadata:
   labels:
     environment-name: "{{ .Values.env }}"
-  name: "np{{ .Values.env }}win"
+  name: "npwin"
 spec:
   forProvider:
     kubernetesClusterIdSelector:
