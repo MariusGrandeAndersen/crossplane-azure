@@ -1,0 +1,36 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: azure
+  namespace: default
+spec:
+  generators:
+    - list:
+        elements:
+          - cluster: dev01
+          - cluster: dev02
+  template:
+    metadata:
+      name: "{{`{{cluster}}-crossplane`}}"
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/MariusGrandeAndersen/crossplane-azure
+        targetRevision: HEAD
+        path: crossplane-azure-cilium
+        helm:
+          valueFiles:
+            - "values.{{`{{cluster}}`}}.yaml"
+      destination:
+        server: "https://kubernetes.default.svc"
+        namespace: azure
+
+      syncPolicy:
+        syncOptions:
+          - CreateNamespace=true
+        automated:
+          allowEmpty: true
+          prune: true
+          selfHeal: true
+        retry:
+          limit: 0 # demo TODO

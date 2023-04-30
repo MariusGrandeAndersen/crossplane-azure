@@ -1,0 +1,9 @@
+apiVersion: azure.upbound.io/v1beta1
+kind: ResourceGroup
+metadata:
+  name: "{{ .Values.env }}-rg"
+spec:
+  forProvider:
+    location: "westeurope" # norwayeast
+  providerConfigRef:
+    name: default

@@ -1,0 +1,12 @@
+# apiVersion: devtestlab.azure.upbound.io/v1beta1
+# kind: VirtualNetwork
+# metadata:
+#   name: "{{ .Values.env }}-vnet"
+# spec:
+#   name: "{{ .Values.env }}-vnet"
+#   resourceGroupName: "{{ .Values.env }}-rg"
+#   location: "westeurope" # norwayeast
+#   properties:
+#     addressSpace:
+#       addressPrefixes:
+#         - 10.2.0.0/16
