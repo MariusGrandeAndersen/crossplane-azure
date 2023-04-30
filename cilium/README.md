@@ -1,0 +1,1 @@
+helm install cilium . -f values.yaml -n kube-system --create-namespace
