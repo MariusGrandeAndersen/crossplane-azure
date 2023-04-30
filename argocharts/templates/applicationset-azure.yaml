@@ -8,7 +8,6 @@ spec:
     - list:
         elements:
           - cluster: dev01
-          - cluster: dev02
   template:
     metadata:
       name: "{{`{{cluster}}-crossplane`}}"
