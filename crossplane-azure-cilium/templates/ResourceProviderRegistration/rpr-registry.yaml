@@ -7,7 +7,7 @@ metadata:
   #     upjet.upbound.io/manual-intervention: Testing of this resource dangerous. It can cause undesired situations.
   labels:
     testing.upbound.io/example-name: example
-  name: enableContainerRegistry
+  name: enablecontainerregistry
 spec:
   forProvider:
     name: Microsoft.ContainerRegistry
