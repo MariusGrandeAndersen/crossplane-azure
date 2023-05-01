@@ -1,0 +1,21 @@
+apiVersion: containerregistry.azure.upbound.io/v1beta1
+kind: Registry
+metadata:
+  name: upbound
+spec:
+  forProvider:
+    networkRuleSet:
+      - defaultAction: Deny
+        ipRule:
+          - action: Allow
+            ipRange: 178.232.6.143/32
+    adminEnabled: false
+    dataEndpointEnabled: true
+    georeplications:
+      - location: Norway East
+        tags: {}
+        zoneRedundancyEnabled: true
+    location: West Europe
+    resourceGroupNameRef:
+      name: "{{ .Values.env }}-rg"
+    sku: Premium
